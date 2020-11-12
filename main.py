@@ -106,7 +106,7 @@ while(state1):
         if opt == 4:
             state2 = False
 
-    exit = input("Si desea salir del programa presione la tecla Y (o presione enter para continuar con un nuevo conjunto): ")
+    exit = input("Si desea salir del programa presione la tecla (Y) (o presione enter para continuar con un nuevo conjunto): ")
     print("------------------------------------------")
 
     if exit == "y" or exit == "Y":
