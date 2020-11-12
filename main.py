@@ -28,7 +28,7 @@ while(state1):
 
     #Bucle while para llenar el conjunto
     while count < max:
-        n = int(input("Ingrese un valor a su conjunto: "))
+        n = input("Ingrese una letra o un numero a su conjunto: ")
         a.append(n)
         count += 1
     print("------------------------------------------")
@@ -55,6 +55,10 @@ while(state1):
 
             per = list(itertools.permutations(a, k))
             print(per)
+            print("------------------------------------------")
+            print("Cantidad de permutaciones: ")
+            pc = len(set(per))
+            print(pc)
             print("")
 
             print("------------------------------------------")
@@ -67,6 +71,10 @@ while(state1):
             print("")
 
             print("------------------------------------------")
+            print("Cantidad de combinaciones: ")
+            cc = len(set(cmb))
+            print(cc)
+            print("------------------------------------------")
 
         if opt == 3:
             print("***** PERMUTACIONES Y COMBINACIONES *****\n")
@@ -76,10 +84,22 @@ while(state1):
             print(per)
             print("")
 
+            print("------------------------------------------")
+            print("Cantidad de permutaciones: ")
+            pc = len(set(per))
+            print(pc)
+            print("")
+
+            print("------------------------------------------")
             print("COMBINACIONES: ")
             cmb = list(itertools.combinations(a, k))
             print(cmb)
             print("")
+
+            print("------------------------------------------")
+            print("Cantidad de combinaciones: ")
+            cc = len(set(cmb))
+            print(cc)
 
             print("------------------------------------------")
 
