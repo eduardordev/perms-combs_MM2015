@@ -21,13 +21,13 @@ while(state1):
 
     state2 = True
     count = 0 #contador para llenar el conjunto
-    
+
     ##########################################################################################
     #Se solicita al usuario el número de elementos de su conjunto y se verifica que sea válido
     ##########################################################################################
-    
+
     maxIncorrect = True
-    
+
     while maxIncorrect:
         try:
             max = int(input("Escriba la cantidad maxima de elementos en su conjunto: "))
@@ -38,7 +38,7 @@ while(state1):
                 print("Debe ingresar un número no negativo mayor que 0...")
         except ValueError:
             print("Debe ingresar un número...")
-    
+
     ##########################################################################################
 
     a = [] #Lista contenedora del conjunto
@@ -49,38 +49,38 @@ while(state1):
         a.append(n)
         count += 1
     print("------------------------------------------")
-    
+
     ####################################################################
     #Se solicita al usuario el valor de k y se verifica que sea correcto
     ####################################################################
-    
+
     kIncorrect = True
 
     while kIncorrect:
         try:
             k = int(input("Escriba la cantidad k de elementos que desea seleccionar del conjunto (-1 para mostrar todos):"))
-        
+
             #El numero k es mayor o igual a 0 pero menor que el numero de elementos
             if k >= 0 and k < len(a):
                 kIncorrect = False
-            
+
             #El numero k es igual a (-1)
             elif k == -1:
                 k = len(a)
                 kIncorrect = False
-            
+
             #El numero k es menor que (-1)
             elif k < -1:
                 print("El número \"k\" debe ser mayor o igual a (-1)")
-            
+
             #El numero k es mayor que el numero de elementos
             elif k > len(a):
                 print("El número k debe ser menor o igual que el numero de elementos...")
-                
+
         #El numero k no es una letra
         except ValueError:
             print("Debe ingresar un valor de \"k\" válido...")
-    
+
     ####################################################################
 
     print("------------------------------------------")
@@ -102,7 +102,7 @@ while(state1):
             print("***** PERMUTACIONES *****\n")
 
             per = list(itertools.permutations(a, k))
-            print(per)
+            print(*per, sep = '\n')
             print("------------------------------------------")
             print("Cantidad de permutaciones: ")
             pc = len(set(per))
@@ -115,7 +115,7 @@ while(state1):
             print("***** COMBINACIONES *****\n")
 
             cmb = list(itertools.combinations(a, k))
-            print(cmb)
+            print(*cmb, sep = '\n')
             print("")
 
             print("------------------------------------------")
@@ -129,7 +129,7 @@ while(state1):
 
             print("PERMUTACIONES: ")
             per = list(itertools.permutations(a, k))
-            print(per)
+            print(*per, sep = '\n')
             print("")
 
             print("------------------------------------------")
@@ -141,7 +141,7 @@ while(state1):
             print("------------------------------------------")
             print("COMBINACIONES: ")
             cmb = list(itertools.combinations(a, k))
-            print(cmb)
+            print(*cmb, sep = '\n')
             print("")
 
             print("------------------------------------------")
@@ -160,4 +160,3 @@ while(state1):
     if exit == "y" or exit == "Y":
         print("***** FIN DEL PROGRAMA *****")
         state1 = False
-
