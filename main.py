@@ -35,9 +35,9 @@ while(state1):
                 print("------------------------------------------")
                 maxIncorrect = False
             elif max <= 0:
-                print("Debe ingresar un número no negativo mayor que 0...")
+                print("Debe ingresar un número entero mayor que 0...")
         except ValueError:
-            print("Debe ingresar un número...")
+            print("Debe ingresar un número entero mayor que 0...")
 
     ##########################################################################################
 
@@ -65,7 +65,7 @@ while(state1):
                 kIncorrect = False
 
             #El numero k es igual a (-1)
-            elif k == -1:
+            elif k == -1 or k == len(a):
                 k = len(a)
                 kIncorrect = False
 
@@ -95,7 +95,11 @@ while(state1):
         print("3. AMBAS ")
         print("4. SALIR ")
         print("------------------------------------------")
-        opt = int(input("Elija la opcion que desea realizar: "))
+        
+        try:
+            opt = int(input("Elija la opcion que desea realizar: "))
+        except ValueError:
+            opt = 0
         print("------------------------------------------")
 
         if opt == 1:
@@ -153,6 +157,10 @@ while(state1):
 
         elif opt == 4:
             state2 = False
+        
+        else:
+            print("Debe ingresar una opción válida...")
+            print("------------------------------------------")
 
     exit = input("Si desea salir del programa presione la tecla (Y) (o presione enter para continuar con un nuevo conjunto): ")
     print("------------------------------------------")
